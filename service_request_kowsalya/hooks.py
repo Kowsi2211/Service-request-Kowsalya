@@ -1,7 +1,7 @@
 app_name = "service_request_kowsalya"
 app_title = "Service Request Kowsalya"
 app_publisher = "kowsalya"
-app_description = "Task service request"
+app_description = "task service request"
 app_email = "kowsalya.craftinteractive@gmail.com"
 app_license = "mit"
 

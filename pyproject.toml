@@ -3,7 +3,7 @@ name = "service_request_kowsalya"
 authors = [
     { name = "kowsalya", email = "kowsalya.craftinteractive@gmail.com"}
 ]
-description = "Task service request"
+description = "task service request"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
