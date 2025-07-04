@@ -2,21 +2,18 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Service Request Form", {
-	contact_email(frm){
-		frm.set_df_property('contact_email', 'description', 'Please enter a valid email with "@" and ".com"');
-		
-
+	contact_email(frm) {
+		frm.set_df_property(
+			"contact_email",
+			"description",
+			'Please enter a valid email with "@" and ".com"'
+		);
 	},
-	contact_number(frm){
-		frm.set_df_property('contact_email', 'description', ' ');
+	contact_number(frm) {
+		frm.set_df_property("contact_email", "description", " ");
 	},
 	validate(frm) {
-		if(!frm.doc.contact_email.includes('@')){
-			frappe.throw("Please Enter Proper mail id")
-		}
-		else if(!frm.doc.contact_email.includes('.com')){
-			frappe.throw("Please Enter Proper mail id")
-		}
+		
 		if (frm.doc.workflow_state != "Submitted" && frm.doc.total_estimated_hours) {
 			let dialog = new frappe.ui.Dialog({
 				title: "Request Form",
