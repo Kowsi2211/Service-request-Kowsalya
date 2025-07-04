@@ -284,6 +284,14 @@ fixtures = [
         ]
         ]
        
+    ]},
+    {"dt":"Role","filters": [
+        [ 
+            "name","in", [
+            "Technician","Service Manager","Service Coordinator"
+        ]
+        ]
+       
     ]}
 ]
 
