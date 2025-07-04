@@ -2,8 +2,21 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Service Request Form", {
-	validate(frm) {
+	contact_email(frm){
+		frm.set_df_property('contact_email', 'description', 'Please enter a valid email with "@" and ".com"');
 		
+
+	},
+	contact_number(frm){
+		frm.set_df_property('contact_email', 'description', ' ');
+	},
+	validate(frm) {
+		if(!frm.doc.contact_email.includes('@')){
+			frappe.throw("Please Enter Proper mail id")
+		}
+		else if(!frm.doc.contact_email.includes('.com')){
+			frappe.throw("Please Enter Proper mail id")
+		}
 		if (frm.doc.workflow_state != "Submitted" && frm.doc.total_estimated_hours) {
 			let dialog = new frappe.ui.Dialog({
 				title: "Request Form",
@@ -48,10 +61,10 @@ frappe.ui.form.on("Service Request Form", {
 				primary_action_label: "Confirm",
 				primary_action(values) {
 					frm.set_value("total_estimated_cost", values.total_estimated_cost);
-					frm.save();
+
 					frm.set_value("workflow_state", "Submitted");
-					console.log(frm.doc.workflow_state);
-					frm.set_value("check", 1);
+					frm.save("Submit");
+
 					dialog.hide();
 				},
 				secondary_action_label: "Edit",
