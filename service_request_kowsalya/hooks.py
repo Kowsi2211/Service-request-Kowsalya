@@ -242,3 +242,41 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+
+fixtures = [
+    {"dt":"Workflow","filters": [
+        [ 
+            "name","in", [
+            "Service Request Form - Workflow"
+        ]
+        ]
+       
+    ]},
+    {"dt":"Property Setter","filters": [
+        [ 
+            "name","in", [
+            "Issue-main-quick_entry"
+        ]
+        ]
+       
+    ]},
+    {"dt":"Workflow State","filters": [
+        [ 
+            "name","in", [
+            "Reopened","Under Review","Submitted","Draft"
+        ]
+        ]
+       
+    ]},
+    {"dt":"Report","filters": [
+        [ 
+            "name","in", [
+            "Service Request Form"
+        ]
+        ]
+       
+    ]}
+]
+
+
